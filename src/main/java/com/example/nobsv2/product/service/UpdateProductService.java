@@ -27,9 +27,7 @@ public class UpdateProductService implements ICommand<UpdateProductCommand, Prod
             productRepository.save(product);
             return ResponseEntity.ok(new ProductDTO(product));
         }
-
         // In the future put exception handling
-
         return null;
     }
 }

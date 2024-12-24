@@ -13,7 +13,7 @@ public class Product {
     }
 
     @Id // all tables in mySQL need a primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // uato generates id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto generates id
     @Column(name = "id")
     private Integer id;
 

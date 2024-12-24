@@ -23,9 +23,7 @@ public class GetProductService implements IQuery<Integer, ProductDTO> {
         if(productOptional.isPresent()){
             return ResponseEntity.ok(new ProductDTO(productOptional.get()));
         }
-
         // In the future put exception handling
-
         return null;
     }
 }
