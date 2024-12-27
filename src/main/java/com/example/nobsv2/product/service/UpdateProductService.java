@@ -1,5 +1,6 @@
 package com.example.nobsv2.product.service;
 
+import com.example.nobsv2.exceptions.ProductNotFoundException;
 import com.example.nobsv2.product.model.Product;
 import com.example.nobsv2.product.model.ProductDTO;
 import com.example.nobsv2.product.repository.ProductRepository;
@@ -27,7 +28,6 @@ public class UpdateProductService implements ICommand<UpdateProductCommand, Prod
             productRepository.save(product);
             return ResponseEntity.ok(new ProductDTO(product));
         }
-        // In the future put exception handling
-        return null;
+        throw new ProductNotFoundException();
     }
 }
