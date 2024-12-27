@@ -1,5 +1,6 @@
 package com.example.nobsv2.product.service;
 
+import com.example.nobsv2.exceptions.ProductNotFoundException;
 import com.example.nobsv2.product.model.Product;
 import com.example.nobsv2.product.model.ProductDTO;
 import com.example.nobsv2.product.repository.ProductRepository;
@@ -23,9 +24,6 @@ public class GetProductService implements IQuery<Integer, ProductDTO> {
         if(productOptional.isPresent()){
             return ResponseEntity.ok(new ProductDTO(productOptional.get()));
         }
-
-        // In the future put exception handling
-
-        return null;
+        throw new ProductNotFoundException();
     }
 }
